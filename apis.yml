@@ -1,0 +1,126 @@
+aid: stack-auth
+url: https://raw.githubusercontent.com/api-evangelist/stack-auth/refs/heads/main/apis.yml
+name: Stack Auth
+kind: company
+description: >-
+  Stack Auth is an open-source authentication and user management platform
+  positioned as a self-hostable alternative to closed-source providers like
+  Clerk and Auth0. It bundles password, OAuth / SSO, and two-factor sign-in
+  flows with organizations, teams, role-based access control, impersonation,
+  webhooks, and pre-built UI components built on shadcn/ui (or a headless
+  SDK). Stack Auth is available as a hosted SaaS at app.stack-auth.com and as
+  a self-hosted deployment from the stack-auth/stack monorepo on GitHub.
+  Authentication is JWT-based. Y Combinator-backed.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Authentication
+  - User Management
+  - Open Source
+  - Self-Hosted
+  - Identity
+  - Organizations
+  - RBAC
+created: '2026-05-23'
+modified: '2026-05-23'
+specificationVersion: '0.19'
+apis:
+  - aid: stack-auth:rest-api
+    name: Stack Auth REST API
+    description: >-
+      REST API for managing users, sessions, OAuth providers, teams,
+      organizations, permissions, and webhooks. Used by Stack Auth's own SDKs
+      and available for custom backend integrations. JWT-based authentication
+      with server / publishable / secret API keys per project.
+    humanURL: https://docs.stack-auth.com/rest-api/overview
+    baseURL: https://api.stack-auth.com
+    tags:
+      - REST
+      - Authentication
+      - Users
+      - Teams
+    properties:
+      - type: Documentation
+        url: https://docs.stack-auth.com/rest-api/overview
+  - aid: stack-auth:webhooks
+    name: Stack Auth Webhooks
+    description: >-
+      Outbound webhook events for user lifecycle, team / organization
+      membership, and permission changes. Customers register endpoint URLs and
+      verify delivery via signed payloads.
+    humanURL: https://docs.stack-auth.com/concepts/webhooks
+    baseURL: customer-configured
+    tags:
+      - Webhooks
+      - Events
+    properties:
+      - type: Documentation
+        url: https://docs.stack-auth.com/concepts/webhooks
+  - aid: stack-auth:sdk-react
+    name: Stack Auth React / Next.js SDK
+    description: >-
+      Frontend SDK distributed as @stackframe/stack on npm. Provides React
+      components, hooks, and Next.js App Router middleware for sign-in,
+      sign-up, account settings, and team / organization management. Headless
+      mode supported for custom UI.
+    humanURL: https://docs.stack-auth.com/sdk/overview
+    baseURL: https://github.com/stack-auth/stack
+    tags:
+      - SDK
+      - React
+      - Next.js
+      - Frontend
+    properties:
+      - type: Documentation
+        url: https://docs.stack-auth.com/sdk/overview
+      - type: Repository
+        url: https://github.com/stack-auth/stack
+  - aid: stack-auth:cli
+    name: Stack Auth CLI
+    description: >-
+      Project bootstrap CLI distributed as @stackframe/init-stack on npm,
+      invoked with `npx @stackframe/init-stack@latest` to wire Stack Auth into
+      a new or existing project.
+    humanURL: https://docs.stack-auth.com/getting-started/setup
+    baseURL: https://github.com/stack-auth/stack
+    tags:
+      - CLI
+      - Tooling
+    properties:
+      - type: Documentation
+        url: https://docs.stack-auth.com/getting-started/setup
+  - aid: stack-auth:self-hosted
+    name: Stack Auth Self-Hosted (stack-auth/stack)
+    description: >-
+      Open-source monorepo containing the Stack Auth backend (Next.js +
+      Postgres) and dashboard. Deployable on customer infrastructure as an
+      alternative to the hosted SaaS at app.stack-auth.com.
+    humanURL: https://github.com/stack-auth/stack
+    baseURL: https://github.com/stack-auth/stack
+    tags:
+      - Open Source
+      - Self-Hosted
+      - Repository
+    properties:
+      - type: Repository
+        url: https://github.com/stack-auth/stack
+common:
+  - type: Website
+    url: https://stack-auth.com/
+  - type: Documentation
+    url: https://docs.stack-auth.com/
+  - type: GitHub
+    url: https://github.com/stack-auth
+  - type: Dashboard
+    url: https://app.stack-auth.com/
+  - type: Pricing
+    url: https://stack-auth.com/pricing
+  - type: Blog
+    url: https://stack-auth.com/blog
+integrations:
+  - name: Next.js
+  - name: React
+  - name: shadcn/ui
+  - name: PostgreSQL
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
