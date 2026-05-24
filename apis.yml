@@ -116,6 +116,8 @@ common:
     url: https://stack-auth.com/pricing
   - type: Blog
     url: https://stack-auth.com/blog
+  - type: LLMsTxt
+    url: https://docs.stack-auth.com/llms.txt
 integrations:
   - name: Next.js
   - name: React
