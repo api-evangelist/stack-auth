@@ -1,0 +1,730 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Stack Auth REST API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Stack-Project-Id",
+      "value": "{{X-Stack-Project-Id}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "API root",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/"
+      },
+      "docs": "Returns a human-readable message with information about the API."
+    },
+    {
+      "info": {
+        "name": "List users",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/users",
+        "params": [
+          {
+            "name": "cursor",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List users"
+    },
+    {
+      "info": {
+        "name": "Create a user",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/users",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a user"
+    },
+    {
+      "info": {
+        "name": "Get a user",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/users/:user_id",
+        "params": [
+          {
+            "name": "user_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a user"
+    },
+    {
+      "info": {
+        "name": "Update a user",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://api.stack-auth.com/api/v1/users/:user_id",
+        "params": [
+          {
+            "name": "user_id",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update a user"
+    },
+    {
+      "info": {
+        "name": "Delete a user",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.stack-auth.com/api/v1/users/:user_id",
+        "params": [
+          {
+            "name": "user_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete a user"
+    },
+    {
+      "info": {
+        "name": "List sessions",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/sessions"
+      },
+      "docs": "List sessions"
+    },
+    {
+      "info": {
+        "name": "Create a session",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/sessions",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a session"
+    },
+    {
+      "info": {
+        "name": "Retrieve the current session",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/sessions/current"
+      },
+      "docs": "Retrieve the current session"
+    },
+    {
+      "info": {
+        "name": "Sign out (delete current session)",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.stack-auth.com/api/v1/sessions/current"
+      },
+      "docs": "Sign out (delete current session)"
+    },
+    {
+      "info": {
+        "name": "Refresh the current session's access token",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/sessions/current/refresh"
+      },
+      "docs": "Refresh the current session's access token"
+    },
+    {
+      "info": {
+        "name": "List teams",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/teams"
+      },
+      "docs": "List teams"
+    },
+    {
+      "info": {
+        "name": "Create a team",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/teams",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a team"
+    },
+    {
+      "info": {
+        "name": "Get a team",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/teams/:team_id",
+        "params": [
+          {
+            "name": "team_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a team"
+    },
+    {
+      "info": {
+        "name": "Update a team",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://api.stack-auth.com/api/v1/teams/:team_id",
+        "params": [
+          {
+            "name": "team_id",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update a team"
+    },
+    {
+      "info": {
+        "name": "Delete a team",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.stack-auth.com/api/v1/teams/:team_id",
+        "params": [
+          {
+            "name": "team_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete a team"
+    },
+    {
+      "info": {
+        "name": "Add a user to a team",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/team-memberships/:team_id/:user_id",
+        "params": [
+          {
+            "name": "team_id",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "user_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Add a user to a team"
+    },
+    {
+      "info": {
+        "name": "Remove a user from a team",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.stack-auth.com/api/v1/team-memberships/:team_id/:user_id",
+        "params": [
+          {
+            "name": "team_id",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "user_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Remove a user from a team"
+    },
+    {
+      "info": {
+        "name": "List team permissions",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/team-permissions"
+      },
+      "docs": "List team permissions"
+    },
+    {
+      "info": {
+        "name": "List team API keys",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/team-api-keys"
+      },
+      "docs": "List team API keys"
+    },
+    {
+      "info": {
+        "name": "Create a team API key",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/team-api-keys",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a team API key"
+    },
+    {
+      "info": {
+        "name": "Get a team API key",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/team-api-keys/:api_key_id",
+        "params": [
+          {
+            "name": "api_key_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a team API key"
+    },
+    {
+      "info": {
+        "name": "Update a team API key",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://api.stack-auth.com/api/v1/team-api-keys/:api_key_id",
+        "params": [
+          {
+            "name": "api_key_id",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update a team API key"
+    },
+    {
+      "info": {
+        "name": "Check whether a team API key is valid",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/team-api-keys/check",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Check whether a team API key is valid"
+    },
+    {
+      "info": {
+        "name": "List user API keys",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/user-api-keys"
+      },
+      "docs": "List user API keys"
+    },
+    {
+      "info": {
+        "name": "Create a user API key",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/user-api-keys",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a user API key"
+    },
+    {
+      "info": {
+        "name": "Get a user API key",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/user-api-keys/:api_key_id",
+        "params": [
+          {
+            "name": "api_key_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a user API key"
+    },
+    {
+      "info": {
+        "name": "Update a user API key",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://api.stack-auth.com/api/v1/user-api-keys/:api_key_id",
+        "params": [
+          {
+            "name": "api_key_id",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update a user API key"
+    },
+    {
+      "info": {
+        "name": "Check whether a user API key is valid",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/user-api-keys/check",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Check whether a user API key is valid"
+    },
+    {
+      "info": {
+        "name": "Anonymous sign-up",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/auth/anonymous/sign-up"
+      },
+      "docs": "Anonymous sign-up"
+    },
+    {
+      "info": {
+        "name": "Start CLI authentication flow",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/auth/cli"
+      },
+      "docs": "Start CLI authentication flow"
+    },
+    {
+      "info": {
+        "name": "Complete CLI authentication flow",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/auth/cli/complete"
+      },
+      "docs": "Complete CLI authentication flow"
+    },
+    {
+      "info": {
+        "name": "Poll CLI authentication flow status",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/auth/cli/poll"
+      },
+      "docs": "Poll CLI authentication flow status"
+    },
+    {
+      "info": {
+        "name": "List contact channels",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/contact-channels"
+      },
+      "docs": "List contact channels"
+    },
+    {
+      "info": {
+        "name": "Create a contact channel",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/contact-channels",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a contact channel"
+    },
+    {
+      "info": {
+        "name": "Send a contact channel verification request",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/contact-channels/verify",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Send a contact channel verification request"
+    },
+    {
+      "info": {
+        "name": "Check a contact channel verification code",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/contact-channels/verify/check-code",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Check a contact channel verification code"
+    },
+    {
+      "info": {
+        "name": "Get a contact channel",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/contact-channels/:user_id/:contact_channel_id",
+        "params": [
+          {
+            "name": "user_id",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "contact_channel_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a contact channel"
+    },
+    {
+      "info": {
+        "name": "Update a contact channel",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://api.stack-auth.com/api/v1/contact-channels/:user_id/:contact_channel_id",
+        "params": [
+          {
+            "name": "user_id",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "contact_channel_id",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update a contact channel"
+    },
+    {
+      "info": {
+        "name": "Delete a contact channel",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.stack-auth.com/api/v1/contact-channels/:user_id/:contact_channel_id",
+        "params": [
+          {
+            "name": "user_id",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "contact_channel_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete a contact channel"
+    },
+    {
+      "info": {
+        "name": "Send an email",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/emails/send-email",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Send an email"
+    },
+    {
+      "info": {
+        "name": "List outbox messages",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/emails/outbox"
+      },
+      "docs": "List outbox messages"
+    },
+    {
+      "info": {
+        "name": "List webhooks",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/webhooks"
+      },
+      "docs": "List webhooks"
+    },
+    {
+      "info": {
+        "name": "Create a webhook",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stack-auth.com/api/v1/webhooks",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a webhook"
+    },
+    {
+      "info": {
+        "name": "List a user's connected (OAuth) accounts",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stack-auth.com/api/v1/connected-accounts/:user_id",
+        "params": [
+          {
+            "name": "user_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List a user's connected (OAuth) accounts"
+    }
+  ],
+  "bundled": true
+}
