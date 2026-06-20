@@ -11,7 +11,7 @@ description: >-
   SDK). Stack Auth is available as a hosted SaaS at app.stack-auth.com and as
   a self-hosted deployment from the stack-auth/stack monorepo on GitHub.
   Authentication is JWT-based. Y Combinator-backed.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Authentication
   - User Management
