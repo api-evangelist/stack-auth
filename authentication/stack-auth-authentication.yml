@@ -1,0 +1,44 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/stack-auth-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: StackProjectId
+  type: apiKey
+  in: header
+  parameter: X-Stack-Project-Id
+  description: Project identifier for the Stack Auth project the request targets.
+  sources:
+  - openapi/stack-auth-openapi.yml
+- name: StackAccessType
+  type: apiKey
+  in: header
+  parameter: X-Stack-Access-Type
+  description: One of "client", "server", or "admin".
+  sources:
+  - openapi/stack-auth-openapi.yml
+- name: StackPublishableClientKey
+  type: apiKey
+  in: header
+  parameter: X-Stack-Publishable-Client-Key
+  description: Publishable client key used for client access type.
+  sources:
+  - openapi/stack-auth-openapi.yml
+- name: StackSecretServerKey
+  type: apiKey
+  in: header
+  parameter: X-Stack-Secret-Server-Key
+  description: Secret server key used for server access type.
+  sources:
+  - openapi/stack-auth-openapi.yml
+- name: StackSuperSecretAdminKey
+  type: apiKey
+  in: header
+  parameter: X-Stack-Super-Secret-Admin-Key
+  description: Admin key used for admin access type.
+  sources:
+  - openapi/stack-auth-openapi.yml

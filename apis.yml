@@ -104,6 +104,10 @@ apis:
       - type: Repository
         url: https://github.com/stack-auth/stack
 common:
+  - type: DomainSecurity
+    url: security/stack-auth-domain-security.yml
+  - type: Authentication
+    url: authentication/stack-auth-authentication.yml
   - type: Website
     url: https://stack-auth.com/
   - type: Documentation

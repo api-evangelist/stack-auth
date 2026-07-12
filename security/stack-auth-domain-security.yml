@@ -1,0 +1,29 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: stack-auth.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 23 08:41:10 2026 GMT
+  hsts: true
+  hsts_max_age: 63072000
+- host: docs.stack-auth.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 24 09:35:08 2026 GMT
+  hsts: true
+  hsts_max_age: 63072000
+- host: api.stack-auth.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 19 09:05:43 2026 GMT
+  hsts: true
+  hsts_max_age: 63072000
+domains:
+- domain: stack-auth.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
