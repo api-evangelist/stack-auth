@@ -104,6 +104,8 @@ apis:
       - type: Repository
         url: https://github.com/stack-auth/stack
 common:
+  - type: AgenticAccess
+    url: agentic-access/stack-auth-agentic-access.yml
   - type: DomainSecurity
     url: security/stack-auth-domain-security.yml
   - type: Authentication
