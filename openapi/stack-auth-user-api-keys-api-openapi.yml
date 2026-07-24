@@ -1,0 +1,116 @@
+openapi: 3.1.0
+info:
+  title: Stack REST Auth User Api Keys API
+  version: 1.0.0
+  description: 'Stack Auth is an open-source authentication and user management platform.
+
+    This is a curated subset of the Stack Auth Server REST API published at
+
+    https://api.stack-auth.com/api/v1, derived from the public OpenAPI document
+
+    referenced from https://docs.stack-auth.com/rest-api/overview.
+
+    '
+  contact:
+    name: Stack Auth
+    url: https://stack-auth.com
+servers:
+- url: https://api.stack-auth.com/api/v1
+  description: Stack Auth REST API
+security:
+- StackProjectId: []
+  StackAccessType: []
+  StackPublishableClientKey: []
+  StackSecretServerKey: []
+tags:
+- name: User Api Keys
+paths:
+  /user-api-keys:
+    get:
+      summary: List user API keys
+      responses:
+        '200':
+          description: List of user API keys
+      tags:
+      - User Api Keys
+    post:
+      summary: Create a user API key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: API key created
+      tags:
+      - User Api Keys
+  /user-api-keys/{api_key_id}:
+    parameters:
+    - in: path
+      name: api_key_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get a user API key
+      responses:
+        '200':
+          description: User API key
+      tags:
+      - User Api Keys
+    patch:
+      summary: Update a user API key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Updated API key
+      tags:
+      - User Api Keys
+  /user-api-keys/check:
+    post:
+      summary: Check whether a user API key is valid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Validation result
+      tags:
+      - User Api Keys
+components:
+  securitySchemes:
+    StackProjectId:
+      type: apiKey
+      in: header
+      name: X-Stack-Project-Id
+      description: Project identifier for the Stack Auth project the request targets.
+    StackAccessType:
+      type: apiKey
+      in: header
+      name: X-Stack-Access-Type
+      description: One of "client", "server", or "admin".
+    StackPublishableClientKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Publishable-Client-Key
+      description: Publishable client key used for client access type.
+    StackSecretServerKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Secret-Server-Key
+      description: Secret server key used for server access type.
+    StackSuperSecretAdminKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Super-Secret-Admin-Key
+      description: Admin key used for admin access type.

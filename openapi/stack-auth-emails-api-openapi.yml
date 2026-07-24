@@ -1,0 +1,76 @@
+openapi: 3.1.0
+info:
+  title: Stack REST Auth Emails API
+  version: 1.0.0
+  description: 'Stack Auth is an open-source authentication and user management platform.
+
+    This is a curated subset of the Stack Auth Server REST API published at
+
+    https://api.stack-auth.com/api/v1, derived from the public OpenAPI document
+
+    referenced from https://docs.stack-auth.com/rest-api/overview.
+
+    '
+  contact:
+    name: Stack Auth
+    url: https://stack-auth.com
+servers:
+- url: https://api.stack-auth.com/api/v1
+  description: Stack Auth REST API
+security:
+- StackProjectId: []
+  StackAccessType: []
+  StackPublishableClientKey: []
+  StackSecretServerKey: []
+tags:
+- name: Emails
+paths:
+  /emails/send-email:
+    post:
+      summary: Send an email
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Send result
+      tags:
+      - Emails
+  /emails/outbox:
+    get:
+      summary: List outbox messages
+      responses:
+        '200':
+          description: List of outbox messages
+      tags:
+      - Emails
+components:
+  securitySchemes:
+    StackProjectId:
+      type: apiKey
+      in: header
+      name: X-Stack-Project-Id
+      description: Project identifier for the Stack Auth project the request targets.
+    StackAccessType:
+      type: apiKey
+      in: header
+      name: X-Stack-Access-Type
+      description: One of "client", "server", or "admin".
+    StackPublishableClientKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Publishable-Client-Key
+      description: Publishable client key used for client access type.
+    StackSecretServerKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Secret-Server-Key
+      description: Secret server key used for server access type.
+    StackSuperSecretAdminKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Super-Secret-Admin-Key
+      description: Admin key used for admin access type.

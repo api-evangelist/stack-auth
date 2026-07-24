@@ -1,0 +1,116 @@
+openapi: 3.1.0
+info:
+  title: Stack REST Auth Team Api Keys API
+  version: 1.0.0
+  description: 'Stack Auth is an open-source authentication and user management platform.
+
+    This is a curated subset of the Stack Auth Server REST API published at
+
+    https://api.stack-auth.com/api/v1, derived from the public OpenAPI document
+
+    referenced from https://docs.stack-auth.com/rest-api/overview.
+
+    '
+  contact:
+    name: Stack Auth
+    url: https://stack-auth.com
+servers:
+- url: https://api.stack-auth.com/api/v1
+  description: Stack Auth REST API
+security:
+- StackProjectId: []
+  StackAccessType: []
+  StackPublishableClientKey: []
+  StackSecretServerKey: []
+tags:
+- name: Team Api Keys
+paths:
+  /team-api-keys:
+    get:
+      summary: List team API keys
+      responses:
+        '200':
+          description: List of API keys
+      tags:
+      - Team Api Keys
+    post:
+      summary: Create a team API key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: API key created
+      tags:
+      - Team Api Keys
+  /team-api-keys/{api_key_id}:
+    parameters:
+    - in: path
+      name: api_key_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get a team API key
+      responses:
+        '200':
+          description: API key
+      tags:
+      - Team Api Keys
+    patch:
+      summary: Update a team API key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Updated API key
+      tags:
+      - Team Api Keys
+  /team-api-keys/check:
+    post:
+      summary: Check whether a team API key is valid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Validation result
+      tags:
+      - Team Api Keys
+components:
+  securitySchemes:
+    StackProjectId:
+      type: apiKey
+      in: header
+      name: X-Stack-Project-Id
+      description: Project identifier for the Stack Auth project the request targets.
+    StackAccessType:
+      type: apiKey
+      in: header
+      name: X-Stack-Access-Type
+      description: One of "client", "server", or "admin".
+    StackPublishableClientKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Publishable-Client-Key
+      description: Publishable client key used for client access type.
+    StackSecretServerKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Secret-Server-Key
+      description: Secret server key used for server access type.
+    StackSuperSecretAdminKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Super-Secret-Admin-Key
+      description: Admin key used for admin access type.

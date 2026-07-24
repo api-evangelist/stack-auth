@@ -1,0 +1,118 @@
+openapi: 3.1.0
+info:
+  title: Stack REST Auth Users API
+  version: 1.0.0
+  description: 'Stack Auth is an open-source authentication and user management platform.
+
+    This is a curated subset of the Stack Auth Server REST API published at
+
+    https://api.stack-auth.com/api/v1, derived from the public OpenAPI document
+
+    referenced from https://docs.stack-auth.com/rest-api/overview.
+
+    '
+  contact:
+    name: Stack Auth
+    url: https://stack-auth.com
+servers:
+- url: https://api.stack-auth.com/api/v1
+  description: Stack Auth REST API
+security:
+- StackProjectId: []
+  StackAccessType: []
+  StackPublishableClientKey: []
+  StackSecretServerKey: []
+tags:
+- name: Users
+paths:
+  /users:
+    get:
+      summary: List users
+      parameters:
+      - in: query
+        name: cursor
+        schema:
+          type: string
+      - in: query
+        name: limit
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Paginated list of users
+      tags:
+      - Users
+    post:
+      summary: Create a user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: User created
+      tags:
+      - Users
+  /users/{user_id}:
+    parameters:
+    - in: path
+      name: user_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get a user
+      responses:
+        '200':
+          description: User
+      tags:
+      - Users
+    patch:
+      summary: Update a user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Updated user
+      tags:
+      - Users
+    delete:
+      summary: Delete a user
+      responses:
+        '204':
+          description: Deleted
+      tags:
+      - Users
+components:
+  securitySchemes:
+    StackProjectId:
+      type: apiKey
+      in: header
+      name: X-Stack-Project-Id
+      description: Project identifier for the Stack Auth project the request targets.
+    StackAccessType:
+      type: apiKey
+      in: header
+      name: X-Stack-Access-Type
+      description: One of "client", "server", or "admin".
+    StackPublishableClientKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Publishable-Client-Key
+      description: Publishable client key used for client access type.
+    StackSecretServerKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Secret-Server-Key
+      description: Secret server key used for server access type.
+    StackSuperSecretAdminKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Super-Secret-Admin-Key
+      description: Admin key used for admin access type.

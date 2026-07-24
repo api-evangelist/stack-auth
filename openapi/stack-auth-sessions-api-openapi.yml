@@ -1,0 +1,98 @@
+openapi: 3.1.0
+info:
+  title: Stack REST Auth Sessions API
+  version: 1.0.0
+  description: 'Stack Auth is an open-source authentication and user management platform.
+
+    This is a curated subset of the Stack Auth Server REST API published at
+
+    https://api.stack-auth.com/api/v1, derived from the public OpenAPI document
+
+    referenced from https://docs.stack-auth.com/rest-api/overview.
+
+    '
+  contact:
+    name: Stack Auth
+    url: https://stack-auth.com
+servers:
+- url: https://api.stack-auth.com/api/v1
+  description: Stack Auth REST API
+security:
+- StackProjectId: []
+  StackAccessType: []
+  StackPublishableClientKey: []
+  StackSecretServerKey: []
+tags:
+- name: Sessions
+paths:
+  /sessions:
+    get:
+      summary: List sessions
+      responses:
+        '200':
+          description: List of sessions
+      tags:
+      - Sessions
+    post:
+      summary: Create a session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Session created
+      tags:
+      - Sessions
+  /sessions/current:
+    get:
+      summary: Retrieve the current session
+      responses:
+        '200':
+          description: Current session
+      tags:
+      - Sessions
+    delete:
+      summary: Sign out (delete current session)
+      responses:
+        '204':
+          description: Signed out
+      tags:
+      - Sessions
+  /sessions/current/refresh:
+    post:
+      summary: Refresh the current session's access token
+      responses:
+        '200':
+          description: New access token issued
+      tags:
+      - Sessions
+components:
+  securitySchemes:
+    StackProjectId:
+      type: apiKey
+      in: header
+      name: X-Stack-Project-Id
+      description: Project identifier for the Stack Auth project the request targets.
+    StackAccessType:
+      type: apiKey
+      in: header
+      name: X-Stack-Access-Type
+      description: One of "client", "server", or "admin".
+    StackPublishableClientKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Publishable-Client-Key
+      description: Publishable client key used for client access type.
+    StackSecretServerKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Secret-Server-Key
+      description: Secret server key used for server access type.
+    StackSuperSecretAdminKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Super-Secret-Admin-Key
+      description: Admin key used for admin access type.
