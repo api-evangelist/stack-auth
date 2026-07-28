@@ -104,6 +104,10 @@ apis:
       - type: Repository
         url: https://github.com/stack-auth/stack
 common:
+  - type: AgentCard
+    url: a2a/stack-auth-a2a.yml
+    name: A2A Agent Card
+    description: Agent Card served at /.well-known/agent-card.json (flavored against A2A 1.0.0).
   - type: AgenticAccess
     url: agentic-access/stack-auth-agentic-access.yml
   - type: DomainSecurity

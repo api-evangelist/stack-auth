@@ -1,0 +1,22 @@
+{
+  "name": "Hexclave",
+  "description": "Open-source user infrastructure for authentication, payments, email, analytics, teams, RBAC, webhooks, API keys, and secure data.",
+  "url": "https://hexclave.com",
+  "provider": {
+    "organization": "Hexclave",
+    "url": "https://hexclave.com"
+  },
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "skills": [
+    {
+      "id": "hexclave-platform",
+      "name": "Hexclave platform",
+      "description": "Discover and integrate Hexclave's modular user infrastructure.",
+      "url": "https://docs.hexclave.com"
+    }
+  ]
+}
