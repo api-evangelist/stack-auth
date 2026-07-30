@@ -24,85 +24,210 @@ created: '2026-05-23'
 modified: '2026-05-23'
 specificationVersion: '0.19'
 apis:
-  - aid: stack-auth:rest-api
-    name: Stack Auth REST API
-    description: >-
-      REST API for managing users, sessions, OAuth providers, teams,
-      organizations, permissions, and webhooks. Used by Stack Auth's own SDKs
-      and available for custom backend integrations. JWT-based authentication
-      with server / publishable / secret API keys per project.
-    humanURL: https://docs.stack-auth.com/rest-api/overview
-    baseURL: https://api.stack-auth.com
-    tags:
-      - REST
-      - Authentication
-      - Users
-      - Teams
-    properties:
-      - type: Documentation
-        url: https://docs.stack-auth.com/rest-api/overview
-  - aid: stack-auth:webhooks
-    name: Stack Auth Webhooks
-    description: >-
-      Outbound webhook events for user lifecycle, team / organization
-      membership, and permission changes. Customers register endpoint URLs and
-      verify delivery via signed payloads.
-    humanURL: https://docs.stack-auth.com/concepts/webhooks
-    baseURL: customer-configured
-    tags:
-      - Webhooks
-      - Events
-    properties:
-      - type: Documentation
-        url: https://docs.stack-auth.com/concepts/webhooks
-  - aid: stack-auth:sdk-react
-    name: Stack Auth React / Next.js SDK
-    description: >-
-      Frontend SDK distributed as @stackframe/stack on npm. Provides React
-      components, hooks, and Next.js App Router middleware for sign-in,
-      sign-up, account settings, and team / organization management. Headless
-      mode supported for custom UI.
-    humanURL: https://docs.stack-auth.com/sdk/overview
-    baseURL: https://github.com/stack-auth/stack
-    tags:
-      - SDK
-      - React
-      - Next.js
-      - Frontend
-    properties:
-      - type: Documentation
-        url: https://docs.stack-auth.com/sdk/overview
-      - type: Repository
-        url: https://github.com/stack-auth/stack
-  - aid: stack-auth:cli
-    name: Stack Auth CLI
-    description: >-
-      Project bootstrap CLI distributed as @stackframe/init-stack on npm,
-      invoked with `npx @stackframe/init-stack@latest` to wire Stack Auth into
-      a new or existing project.
-    humanURL: https://docs.stack-auth.com/getting-started/setup
-    baseURL: https://github.com/stack-auth/stack
-    tags:
-      - CLI
-      - Tooling
-    properties:
-      - type: Documentation
-        url: https://docs.stack-auth.com/getting-started/setup
-  - aid: stack-auth:self-hosted
-    name: Stack Auth Self-Hosted (stack-auth/stack)
-    description: >-
-      Open-source monorepo containing the Stack Auth backend (Next.js +
-      Postgres) and dashboard. Deployable on customer infrastructure as an
-      alternative to the hosted SaaS at app.stack-auth.com.
-    humanURL: https://github.com/stack-auth/stack
-    baseURL: https://github.com/stack-auth/stack
-    tags:
-      - Open Source
-      - Self-Hosted
-      - Repository
-    properties:
-      - type: Repository
-        url: https://github.com/stack-auth/stack
+- aid: stack-auth:rest-api
+  name: Stack Auth REST API
+  description: >-
+    REST API for managing users, sessions, OAuth providers, teams, organizations, permissions, and webhooks.
+    Used by Stack Auth's own SDKs and available for custom backend integrations. JWT-based authentication
+    with server / publishable / secret API keys per project.
+  humanURL: https://docs.stack-auth.com/rest-api/overview
+  baseURL: https://api.stack-auth.com
+  tags:
+  - REST
+  - Authentication
+  - Users
+  - Teams
+  properties:
+  - type: Documentation
+    url: https://docs.stack-auth.com/rest-api/overview
+- aid: stack-auth:webhooks
+  name: Stack Auth Webhooks
+  description: >-
+    Outbound webhook events for user lifecycle, team / organization membership, and permission changes.
+    Customers register endpoint URLs and verify delivery via signed payloads.
+  humanURL: https://docs.stack-auth.com/concepts/webhooks
+  baseURL: customer-configured
+  tags:
+  - Webhooks
+  - Events
+  properties:
+  - type: Documentation
+    url: https://docs.stack-auth.com/concepts/webhooks
+- aid: stack-auth:sdk-react
+  name: Stack Auth React / Next.js SDK
+  description: >-
+    Frontend SDK distributed as @stackframe/stack on npm. Provides React components, hooks, and Next.js
+    App Router middleware for sign-in, sign-up, account settings, and team / organization management.
+    Headless mode supported for custom UI.
+  humanURL: https://docs.stack-auth.com/sdk/overview
+  baseURL: https://github.com/stack-auth/stack
+  tags:
+  - SDK
+  - React
+  - Next.js
+  - Frontend
+  properties:
+  - type: Documentation
+    url: https://docs.stack-auth.com/sdk/overview
+  - type: Repository
+    url: https://github.com/stack-auth/stack
+- aid: stack-auth:cli
+  name: Stack Auth CLI
+  description: >-
+    Project bootstrap CLI distributed as @stackframe/init-stack on npm, invoked with `npx @stackframe/init-stack@latest`
+    to wire Stack Auth into a new or existing project.
+  humanURL: https://docs.stack-auth.com/getting-started/setup
+  baseURL: https://github.com/stack-auth/stack
+  tags:
+  - CLI
+  - Tooling
+  properties:
+  - type: Documentation
+    url: https://docs.stack-auth.com/getting-started/setup
+- aid: stack-auth:self-hosted
+  name: Stack Auth Self-Hosted (stack-auth/stack)
+  description: >-
+    Open-source monorepo containing the Stack Auth backend (Next.js + Postgres) and dashboard. Deployable
+    on customer infrastructure as an alternative to the hosted SaaS at app.stack-auth.com.
+  humanURL: https://github.com/stack-auth/stack
+  baseURL: https://github.com/stack-auth/stack
+  tags:
+  - Open Source
+  - Self-Hosted
+  - Repository
+  properties:
+  - type: Repository
+    url: https://github.com/stack-auth/stack
+- aid: stack-auth:stack-auth-auth-api
+  name: Stack Auth Auth API
+  description: The Auth API from Stack Auth — 4 operation(s) for auth.
+  humanURL: https://docs.stack-auth.com/rest-api/overview
+  baseURL: https://api.stack-auth.com
+  tags:
+  - Auth
+  properties:
+  - type: OpenAPI
+    url: openapi/stack-auth-auth-api-openapi.yml
+- aid: stack-auth:stack-auth-connected-accounts-api
+  name: Stack Auth Connected Accounts API
+  description: The Connected Accounts API from Stack Auth — 1 operation(s) for connected accounts.
+  humanURL: https://docs.stack-auth.com/rest-api/overview
+  baseURL: https://api.stack-auth.com
+  tags:
+  - Connected Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/stack-auth-connected-accounts-api-openapi.yml
+- aid: stack-auth:stack-auth-contact-channels-api
+  name: Stack Auth Contact Channels API
+  description: The Contact Channels API from Stack Auth — 4 operation(s) for contact channels.
+  humanURL: https://docs.stack-auth.com/rest-api/overview
+  baseURL: https://api.stack-auth.com
+  tags:
+  - Contact Channels
+  properties:
+  - type: OpenAPI
+    url: openapi/stack-auth-contact-channels-api-openapi.yml
+- aid: stack-auth:stack-auth-emails-api
+  name: Stack Auth Emails API
+  description: The Emails API from Stack Auth — 2 operation(s) for emails.
+  humanURL: https://docs.stack-auth.com/rest-api/overview
+  baseURL: https://api.stack-auth.com
+  tags:
+  - Emails
+  properties:
+  - type: OpenAPI
+    url: openapi/stack-auth-emails-api-openapi.yml
+- aid: stack-auth:stack-auth-sessions-api
+  name: Stack Auth Sessions API
+  description: The Sessions API from Stack Auth — 3 operation(s) for sessions.
+  humanURL: https://docs.stack-auth.com/rest-api/overview
+  baseURL: https://api.stack-auth.com
+  tags:
+  - Sessions
+  properties:
+  - type: OpenAPI
+    url: openapi/stack-auth-sessions-api-openapi.yml
+- aid: stack-auth:stack-auth-stack-auth-rest-api-api
+  name: Stack Auth Stack Auth REST API API
+  description: The Stack Auth REST API API from Stack Auth — 1 operation(s) for stack auth rest api.
+  humanURL: https://docs.stack-auth.com/rest-api/overview
+  baseURL: https://api.stack-auth.com
+  tags:
+  - Stack Auth REST API
+  properties:
+  - type: OpenAPI
+    url: openapi/stack-auth-stack-auth-rest-api-api-openapi.yml
+- aid: stack-auth:stack-auth-team-api-keys-api
+  name: Stack Auth Team Api Keys API
+  description: The Team Api Keys API from Stack Auth — 3 operation(s) for team api keys.
+  humanURL: https://docs.stack-auth.com/rest-api/overview
+  baseURL: https://api.stack-auth.com
+  tags:
+  - Team Api Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/stack-auth-team-api-keys-api-openapi.yml
+- aid: stack-auth:stack-auth-team-memberships-api
+  name: Stack Auth Team Memberships API
+  description: The Team Memberships API from Stack Auth — 1 operation(s) for team memberships.
+  humanURL: https://docs.stack-auth.com/rest-api/overview
+  baseURL: https://api.stack-auth.com
+  tags:
+  - Team Memberships
+  properties:
+  - type: OpenAPI
+    url: openapi/stack-auth-team-memberships-api-openapi.yml
+- aid: stack-auth:stack-auth-team-permissions-api
+  name: Stack Auth Team Permissions API
+  description: The Team Permissions API from Stack Auth — 1 operation(s) for team permissions.
+  humanURL: https://docs.stack-auth.com/rest-api/overview
+  baseURL: https://api.stack-auth.com
+  tags:
+  - Team Permissions
+  properties:
+  - type: OpenAPI
+    url: openapi/stack-auth-team-permissions-api-openapi.yml
+- aid: stack-auth:stack-auth-teams-api
+  name: Stack Auth Teams API
+  description: The Teams API from Stack Auth — 2 operation(s) for teams.
+  humanURL: https://docs.stack-auth.com/rest-api/overview
+  baseURL: https://api.stack-auth.com
+  tags:
+  - Teams
+  properties:
+  - type: OpenAPI
+    url: openapi/stack-auth-teams-api-openapi.yml
+- aid: stack-auth:stack-auth-user-api-keys-api
+  name: Stack Auth User Api Keys API
+  description: The User Api Keys API from Stack Auth — 3 operation(s) for user api keys.
+  humanURL: https://docs.stack-auth.com/rest-api/overview
+  baseURL: https://api.stack-auth.com
+  tags:
+  - User Api Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/stack-auth-user-api-keys-api-openapi.yml
+- aid: stack-auth:stack-auth-users-api
+  name: Stack Auth Users API
+  description: The Users API from Stack Auth — 2 operation(s) for users.
+  humanURL: https://docs.stack-auth.com/rest-api/overview
+  baseURL: https://api.stack-auth.com
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/stack-auth-users-api-openapi.yml
+- aid: stack-auth:stack-auth-webhooks-api
+  name: Stack Auth Webhooks API
+  description: The Webhooks API from Stack Auth — 1 operation(s) for webhooks.
+  humanURL: https://docs.stack-auth.com/rest-api/overview
+  baseURL: https://api.stack-auth.com
+  tags:
+  - Webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/stack-auth-webhooks-api-openapi.yml
 common:
   - type: AgentCard
     url: a2a/stack-auth-a2a.yml
