@@ -1,0 +1,438 @@
+openapi: 3.1.0
+info:
+  title: Stack Auth REST API
+  version: "1.0.0"
+  description: |
+    Stack Auth is an open-source authentication and user management platform.
+    This is a curated subset of the Stack Auth Server REST API published at
+    https://api.stack-auth.com/api/v1, derived from the public OpenAPI document
+    referenced from https://docs.stack-auth.com/rest-api/overview.
+  contact:
+    name: Stack Auth
+    url: https://stack-auth.com
+servers:
+  - url: https://api.stack-auth.com/api/v1
+    description: Stack Auth REST API
+security:
+  - StackProjectId: []
+    StackAccessType: []
+    StackPublishableClientKey: []
+    StackSecretServerKey: []
+components:
+  securitySchemes:
+    StackProjectId:
+      type: apiKey
+      in: header
+      name: X-Stack-Project-Id
+      description: Project identifier for the Stack Auth project the request targets.
+    StackAccessType:
+      type: apiKey
+      in: header
+      name: X-Stack-Access-Type
+      description: One of "client", "server", or "admin".
+    StackPublishableClientKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Publishable-Client-Key
+      description: Publishable client key used for client access type.
+    StackSecretServerKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Secret-Server-Key
+      description: Secret server key used for server access type.
+    StackSuperSecretAdminKey:
+      type: apiKey
+      in: header
+      name: X-Stack-Super-Secret-Admin-Key
+      description: Admin key used for admin access type.
+paths:
+  /:
+    get:
+      summary: API root
+      description: Returns a human-readable message with information about the API.
+      responses:
+        "200":
+          description: Successful response
+  /users:
+    get:
+      summary: List users
+      parameters:
+        - in: query
+          name: cursor
+          schema: { type: string }
+        - in: query
+          name: limit
+          schema: { type: integer }
+      responses:
+        "200":
+          description: Paginated list of users
+    post:
+      summary: Create a user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: User created
+  /users/{user_id}:
+    parameters:
+      - in: path
+        name: user_id
+        required: true
+        schema: { type: string }
+    get:
+      summary: Get a user
+      responses:
+        "200":
+          description: User
+    patch:
+      summary: Update a user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "200":
+          description: Updated user
+    delete:
+      summary: Delete a user
+      responses:
+        "204":
+          description: Deleted
+  /sessions:
+    get:
+      summary: List sessions
+      responses:
+        "200":
+          description: List of sessions
+    post:
+      summary: Create a session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "201":
+          description: Session created
+  /sessions/current:
+    get:
+      summary: Retrieve the current session
+      responses:
+        "200":
+          description: Current session
+    delete:
+      summary: Sign out (delete current session)
+      responses:
+        "204":
+          description: Signed out
+  /sessions/current/refresh:
+    post:
+      summary: Refresh the current session's access token
+      responses:
+        "200":
+          description: New access token issued
+  /teams:
+    get:
+      summary: List teams
+      responses:
+        "200":
+          description: List of teams
+    post:
+      summary: Create a team
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "201":
+          description: Team created
+  /teams/{team_id}:
+    parameters:
+      - in: path
+        name: team_id
+        required: true
+        schema: { type: string }
+    get:
+      summary: Get a team
+      responses:
+        "200":
+          description: Team
+    patch:
+      summary: Update a team
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "200":
+          description: Updated team
+    delete:
+      summary: Delete a team
+      responses:
+        "204":
+          description: Deleted
+  /team-memberships/{team_id}/{user_id}:
+    parameters:
+      - in: path
+        name: team_id
+        required: true
+        schema: { type: string }
+      - in: path
+        name: user_id
+        required: true
+        schema: { type: string }
+    post:
+      summary: Add a user to a team
+      responses:
+        "201":
+          description: Membership created
+    delete:
+      summary: Remove a user from a team
+      responses:
+        "204":
+          description: Membership removed
+  /team-permissions:
+    get:
+      summary: List team permissions
+      responses:
+        "200":
+          description: List of permissions
+  /team-api-keys:
+    get:
+      summary: List team API keys
+      responses:
+        "200":
+          description: List of API keys
+    post:
+      summary: Create a team API key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "201":
+          description: API key created
+  /team-api-keys/{api_key_id}:
+    parameters:
+      - in: path
+        name: api_key_id
+        required: true
+        schema: { type: string }
+    get:
+      summary: Get a team API key
+      responses:
+        "200":
+          description: API key
+    patch:
+      summary: Update a team API key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "200":
+          description: Updated API key
+  /team-api-keys/check:
+    post:
+      summary: Check whether a team API key is valid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "200":
+          description: Validation result
+  /user-api-keys:
+    get:
+      summary: List user API keys
+      responses:
+        "200":
+          description: List of user API keys
+    post:
+      summary: Create a user API key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "201":
+          description: API key created
+  /user-api-keys/{api_key_id}:
+    parameters:
+      - in: path
+        name: api_key_id
+        required: true
+        schema: { type: string }
+    get:
+      summary: Get a user API key
+      responses:
+        "200":
+          description: User API key
+    patch:
+      summary: Update a user API key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "200":
+          description: Updated API key
+  /user-api-keys/check:
+    post:
+      summary: Check whether a user API key is valid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "200":
+          description: Validation result
+  /auth/anonymous/sign-up:
+    post:
+      summary: Anonymous sign-up
+      responses:
+        "200":
+          description: Anonymous session created
+  /auth/cli:
+    post:
+      summary: Start CLI authentication flow
+      responses:
+        "200":
+          description: CLI auth flow started
+  /auth/cli/complete:
+    post:
+      summary: Complete CLI authentication flow
+      responses:
+        "200":
+          description: CLI auth completed
+  /auth/cli/poll:
+    post:
+      summary: Poll CLI authentication flow status
+      responses:
+        "200":
+          description: Poll result
+  /contact-channels:
+    get:
+      summary: List contact channels
+      responses:
+        "200":
+          description: List of contact channels
+    post:
+      summary: Create a contact channel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "201":
+          description: Contact channel created
+  /contact-channels/verify:
+    post:
+      summary: Send a contact channel verification request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "200":
+          description: Verification sent
+  /contact-channels/verify/check-code:
+    post:
+      summary: Check a contact channel verification code
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "200":
+          description: Verification result
+  /contact-channels/{user_id}/{contact_channel_id}:
+    parameters:
+      - in: path
+        name: user_id
+        required: true
+        schema: { type: string }
+      - in: path
+        name: contact_channel_id
+        required: true
+        schema: { type: string }
+    get:
+      summary: Get a contact channel
+      responses:
+        "200":
+          description: Contact channel
+    patch:
+      summary: Update a contact channel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "200":
+          description: Updated contact channel
+    delete:
+      summary: Delete a contact channel
+      responses:
+        "204":
+          description: Deleted
+  /emails/send-email:
+    post:
+      summary: Send an email
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "200":
+          description: Send result
+  /emails/outbox:
+    get:
+      summary: List outbox messages
+      responses:
+        "200":
+          description: List of outbox messages
+  /webhooks:
+    get:
+      summary: List webhooks
+      responses:
+        "200":
+          description: List of webhooks
+    post:
+      summary: Create a webhook
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "201":
+          description: Webhook created
+  /connected-accounts/{user_id}:
+    parameters:
+      - in: path
+        name: user_id
+        required: true
+        schema: { type: string }
+    get:
+      summary: List a user's connected (OAuth) accounts
+      responses:
+        "200":
+          description: Connected accounts

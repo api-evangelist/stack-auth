@@ -1,0 +1,38 @@
+{
+  "provider": "stack-auth",
+  "sources": [
+    "stack-auth-auth-api-openapi.yml",
+    "stack-auth-connected-accounts-api-openapi.yml",
+    "stack-auth-contact-channels-api-openapi.yml",
+    "stack-auth-emails-api-openapi.yml",
+    "stack-auth-sessions-api-openapi.yml",
+    "stack-auth-stack-auth-rest-api-api-openapi.yml",
+    "stack-auth-team-api-keys-api-openapi.yml",
+    "stack-auth-team-memberships-api-openapi.yml",
+    "stack-auth-team-permissions-api-openapi.yml",
+    "stack-auth-teams-api-openapi.yml",
+    "stack-auth-user-api-keys-api-openapi.yml",
+    "stack-auth-users-api-openapi.yml",
+    "stack-auth-webhooks-api-openapi.yml"
+  ],
+  "outputs": [
+    "stack-auth-auth-api-openapi.yml",
+    "stack-auth-connected-accounts-api-openapi.yml",
+    "stack-auth-contact-channels-api-openapi.yml",
+    "stack-auth-emails-api-openapi.yml",
+    "stack-auth-sessions-api-openapi.yml",
+    "stack-auth-stack-auth-rest-api-api-openapi.yml",
+    "stack-auth-team-api-keys-api-openapi.yml",
+    "stack-auth-team-memberships-api-openapi.yml",
+    "stack-auth-team-permissions-api-openapi.yml",
+    "stack-auth-teams-api-openapi.yml",
+    "stack-auth-user-api-keys-api-openapi.yml",
+    "stack-auth-users-api-openapi.yml",
+    "stack-auth-webhooks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
