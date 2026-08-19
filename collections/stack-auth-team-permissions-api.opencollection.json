@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Stack REST Auth Team Permissions API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Stack-Project-Id",
+      "value": "{{X-Stack-Project-Id}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Team Permissions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List team permissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stack-auth.com/api/v1/team-permissions"
+          },
+          "docs": "List team permissions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,114 @@
+{
+  "item": [
+    {
+      "id": "3a2c77cf-8d2f-4f6b-b211-c3f1f8ca8a8e",
+      "name": "Team Permissions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "23614232-2f1d-4a99-991e-41415249059b",
+          "name": "List team permissions",
+          "request": {
+            "name": "List team permissions",
+            "description": {},
+            "url": {
+              "path": [
+                "team-permissions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0f705313-b223-48e8-b7e2-4b855c3a0204",
+              "name": "List of permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "team-permissions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Stack-Project-Id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.stack-auth.com/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Stack-Project-Id"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "26f21110-b68d-4e71-944c-04d56256a9ab",
+    "name": "Stack REST Auth Team Permissions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Stack Auth is an open-source authentication and user management platform.\nThis is a curated subset of the Stack Auth Server REST API published at\nhttps://api.stack-auth.com/api/v1, derived from the public OpenAPI document\nreferenced from https://docs.stack-auth.com/rest-api/overview.\n\n\nContact Support:\n Name: Stack Auth",
+      "type": "text/plain"
+    }
+  }
+}

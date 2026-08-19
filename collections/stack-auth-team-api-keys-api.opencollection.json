@@ -1,0 +1,107 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Stack REST Auth Team Api Keys API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Stack-Project-Id",
+      "value": "{{X-Stack-Project-Id}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Team Api Keys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List team API keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stack-auth.com/api/v1/team-api-keys"
+          },
+          "docs": "List team API keys"
+        },
+        {
+          "info": {
+            "name": "Create a team API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stack-auth.com/api/v1/team-api-keys",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a team API key"
+        },
+        {
+          "info": {
+            "name": "Get a team API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stack-auth.com/api/v1/team-api-keys/:api_key_id",
+            "params": [
+              {
+                "name": "api_key_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a team API key"
+        },
+        {
+          "info": {
+            "name": "Update a team API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.stack-auth.com/api/v1/team-api-keys/:api_key_id",
+            "params": [
+              {
+                "name": "api_key_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a team API key"
+        },
+        {
+          "info": {
+            "name": "Check whether a team API key is valid",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stack-auth.com/api/v1/team-api-keys/check",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Check whether a team API key is valid"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

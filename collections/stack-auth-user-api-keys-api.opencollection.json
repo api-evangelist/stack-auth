@@ -1,0 +1,107 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Stack REST Auth User Api Keys API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Stack-Project-Id",
+      "value": "{{X-Stack-Project-Id}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "User Api Keys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List user API keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stack-auth.com/api/v1/user-api-keys"
+          },
+          "docs": "List user API keys"
+        },
+        {
+          "info": {
+            "name": "Create a user API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stack-auth.com/api/v1/user-api-keys",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a user API key"
+        },
+        {
+          "info": {
+            "name": "Get a user API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stack-auth.com/api/v1/user-api-keys/:api_key_id",
+            "params": [
+              {
+                "name": "api_key_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a user API key"
+        },
+        {
+          "info": {
+            "name": "Update a user API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.stack-auth.com/api/v1/user-api-keys/:api_key_id",
+            "params": [
+              {
+                "name": "api_key_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a user API key"
+        },
+        {
+          "info": {
+            "name": "Check whether a user API key is valid",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stack-auth.com/api/v1/user-api-keys/check",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Check whether a user API key is valid"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

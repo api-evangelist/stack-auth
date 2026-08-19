@@ -1,0 +1,117 @@
+{
+  "item": [
+    {
+      "id": "5df45ac1-66d7-498f-a260-577af2eba1fb",
+      "name": "Stack Auth REST API",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d502c936-1da0-4514-b2b9-c0bdd6d6f9d9",
+          "name": "API root",
+          "request": {
+            "name": "API root",
+            "description": {
+              "content": "Returns a human-readable message with information about the API.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "80832c2e-859d-488c-be0b-cff403fccd3b",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Stack-Project-Id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.stack-auth.com/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Stack-Project-Id"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "061acf61-1ccd-49d1-9f78-65f225203653",
+    "name": "Stack REST Auth Stack Auth REST API API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Stack Auth is an open-source authentication and user management platform.\nThis is a curated subset of the Stack Auth Server REST API published at\nhttps://api.stack-auth.com/api/v1, derived from the public OpenAPI document\nreferenced from https://docs.stack-auth.com/rest-api/overview.\n\n\nContact Support:\n Name: Stack Auth",
+      "type": "text/plain"
+    }
+  }
+}

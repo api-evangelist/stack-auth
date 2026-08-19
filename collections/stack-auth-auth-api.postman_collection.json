@@ -1,0 +1,323 @@
+{
+  "item": [
+    {
+      "id": "fa0029a9-3603-47d2-bc1e-b5c5e18f80cd",
+      "name": "Auth",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0e8d6f1d-11f9-46fe-b113-00b1f5f640ea",
+          "name": "Anonymous sign-up",
+          "request": {
+            "name": "Anonymous sign-up",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "anonymous",
+                "sign-up"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "97e38893-826f-486d-b29f-87705eea4727",
+              "name": "Anonymous session created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "anonymous",
+                    "sign-up"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Stack-Project-Id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "042ea181-3147-4e82-bd6c-42dcaf673f68",
+          "name": "Start CLI authentication flow",
+          "request": {
+            "name": "Start CLI authentication flow",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "cli"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d434189f-71ff-4880-8205-dadcba149fee",
+              "name": "CLI auth flow started",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "cli"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Stack-Project-Id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "470e3070-701d-4487-b181-fe85cb6f5a45",
+          "name": "Complete CLI authentication flow",
+          "request": {
+            "name": "Complete CLI authentication flow",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "cli",
+                "complete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d85c7b03-7fe0-4d76-926f-616059eba742",
+              "name": "CLI auth completed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "cli",
+                    "complete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Stack-Project-Id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aa571af0-3877-4580-8f64-8f9a52aabf3d",
+          "name": "Poll CLI authentication flow status",
+          "request": {
+            "name": "Poll CLI authentication flow status",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "cli",
+                "poll"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d2832463-7549-4a15-b850-4e56960fdd6b",
+              "name": "Poll result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "cli",
+                    "poll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Stack-Project-Id",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.stack-auth.com/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Stack-Project-Id"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "60d98d92-7083-47f0-846c-5ce092233a8f",
+    "name": "Stack REST Auth API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Stack Auth is an open-source authentication and user management platform.\nThis is a curated subset of the Stack Auth Server REST API published at\nhttps://api.stack-auth.com/api/v1, derived from the public OpenAPI document\nreferenced from https://docs.stack-auth.com/rest-api/overview.\n\n\nContact Support:\n Name: Stack Auth",
+      "type": "text/plain"
+    }
+  }
+}

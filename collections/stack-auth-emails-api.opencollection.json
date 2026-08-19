@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Stack REST Auth Emails API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Stack-Project-Id",
+      "value": "{{X-Stack-Project-Id}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Emails",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send an email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stack-auth.com/api/v1/emails/send-email",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send an email"
+        },
+        {
+          "info": {
+            "name": "List outbox messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stack-auth.com/api/v1/emails/outbox"
+          },
+          "docs": "List outbox messages"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

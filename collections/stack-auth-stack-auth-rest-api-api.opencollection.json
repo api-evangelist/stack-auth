@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Stack REST Auth Stack Auth REST API API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Stack-Project-Id",
+      "value": "{{X-Stack-Project-Id}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Stack Auth REST API",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "API root",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stack-auth.com/api/v1/"
+          },
+          "docs": "Returns a human-readable message with information about the API."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

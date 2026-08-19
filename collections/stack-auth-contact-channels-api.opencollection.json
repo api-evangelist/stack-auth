@@ -1,0 +1,155 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Stack REST Auth Contact Channels API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Stack-Project-Id",
+      "value": "{{X-Stack-Project-Id}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Contact Channels",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List contact channels",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stack-auth.com/api/v1/contact-channels"
+          },
+          "docs": "List contact channels"
+        },
+        {
+          "info": {
+            "name": "Create a contact channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stack-auth.com/api/v1/contact-channels",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a contact channel"
+        },
+        {
+          "info": {
+            "name": "Send a contact channel verification request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stack-auth.com/api/v1/contact-channels/verify",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send a contact channel verification request"
+        },
+        {
+          "info": {
+            "name": "Check a contact channel verification code",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stack-auth.com/api/v1/contact-channels/verify/check-code",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Check a contact channel verification code"
+        },
+        {
+          "info": {
+            "name": "Get a contact channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stack-auth.com/api/v1/contact-channels/:user_id/:contact_channel_id",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "contact_channel_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a contact channel"
+        },
+        {
+          "info": {
+            "name": "Update a contact channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.stack-auth.com/api/v1/contact-channels/:user_id/:contact_channel_id",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "contact_channel_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a contact channel"
+        },
+        {
+          "info": {
+            "name": "Delete a contact channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.stack-auth.com/api/v1/contact-channels/:user_id/:contact_channel_id",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "contact_channel_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a contact channel"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
