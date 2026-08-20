@@ -15,6 +15,14 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.j
 tags:
   - Authentication
   - User Management
+  - Open-Source
+  - Self-Hosted
+  - Identity
+  - Organization
+  - RBAC
+tags_raw:
+  - Authentication
+  - User Management
   - Open Source
   - Self-Hosted
   - Identity
@@ -35,6 +43,11 @@ apis:
   tags:
   - REST
   - Authentication
+  - User
+  - Team
+  tags_raw:
+  - REST
+  - Authentication
   - Users
   - Teams
   properties:
@@ -48,6 +61,9 @@ apis:
   humanURL: https://docs.stack-auth.com/concepts/webhooks
   baseURL: customer-configured
   tags:
+  - Webhook
+  - Event
+  tags_raw:
   - Webhooks
   - Events
   properties:
@@ -92,6 +108,10 @@ apis:
   humanURL: https://github.com/stack-auth/stack
   baseURL: https://github.com/stack-auth/stack
   tags:
+  - Open-Source
+  - Self-Hosted
+  - Repository
+  tags_raw:
   - Open Source
   - Self-Hosted
   - Repository
@@ -104,6 +124,8 @@ apis:
   humanURL: https://docs.stack-auth.com/rest-api/overview
   baseURL: https://api.stack-auth.com
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
@@ -194,6 +216,8 @@ apis:
   humanURL: https://docs.stack-auth.com/rest-api/overview
   baseURL: https://api.stack-auth.com
   tags:
+  - Team
+  tags_raw:
   - Teams
   properties:
   - type: OpenAPI
@@ -214,6 +238,8 @@ apis:
   humanURL: https://docs.stack-auth.com/rest-api/overview
   baseURL: https://api.stack-auth.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
@@ -224,6 +250,8 @@ apis:
   humanURL: https://docs.stack-auth.com/rest-api/overview
   baseURL: https://api.stack-auth.com
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI
