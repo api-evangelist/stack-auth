@@ -24,6 +24,21 @@ deliveryModel:
   - repository-unlicensed
   generated: '2026-08-28'
   method: derived
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: medium
+  source:
+  - plans
+  - authentication
+  - security
+  - {url: 'https://stack-auth.com/', status: 308, note: 'declared website redirects to https://www.hexclave.com/ — a different registrable domain (stack-auth.com -> hexclave.com), possible rename or acquisition (probed 2026-09-03, roadmap#169)'}
+  generated: '2026-09-03'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Authentication
