@@ -2,15 +2,12 @@ aid: stack-auth
 url: https://raw.githubusercontent.com/api-evangelist/stack-auth/refs/heads/main/apis.yml
 name: Stack Auth
 kind: company
-description: >-
-  Stack Auth is an open-source authentication and user management platform
-  positioned as a self-hostable alternative to closed-source providers like
-  Clerk and Auth0. It bundles password, OAuth / SSO, and two-factor sign-in
-  flows with organizations, teams, role-based access control, impersonation,
-  webhooks, and pre-built UI components built on shadcn/ui (or a headless
-  SDK). Stack Auth is available as a hosted SaaS at app.stack-auth.com and as
-  a self-hosted deployment from the stack-auth/stack monorepo on GitHub.
-  Authentication is JWT-based. Y Combinator-backed.
+description: Stack Auth is an open-source authentication and user management platform positioned as a
+  self-hostable alternative to closed-source providers like Clerk and Auth0. It bundles password, OAuth
+  / SSO, and two-factor sign-in flows with organizations, teams, role-based access control, impersonation,
+  webhooks, and pre-built UI components built on shadcn/ui (or a headless SDK). Stack Auth is available
+  as a hosted SaaS at app.stack-auth.com and as a self-hosted deployment from the stack-auth/stack monorepo
+  on GitHub. Authentication is JWT-based. Y Combinator-backed.
 deliveryModel:
   model: unknown
   open_source: unknown
@@ -36,36 +33,38 @@ accessModel:
   - plans
   - authentication
   - security
-  - {url: 'https://stack-auth.com/', status: 308, note: 'declared website redirects to https://www.hexclave.com/ — a different registrable domain (stack-auth.com -> hexclave.com), possible rename or acquisition (probed 2026-09-03, roadmap#169)'}
+  - url: https://stack-auth.com/
+    status: 308
+    note: declared website redirects to https://www.hexclave.com/ — a different registrable domain (stack-auth.com
+      -> hexclave.com), possible rename or acquisition (probed 2026-09-03, roadmap#169)
   generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
-  - Authentication
-  - User Management
-  - Open-Source
-  - Self-Hosted
-  - Identity
-  - Organization
-  - RBAC
+- Authentication
+- User Management
+- Open-Source
+- Self-Hosted
+- Identity
+- Organization
+- RBAC
 tags_raw:
-  - Authentication
-  - User Management
-  - Open Source
-  - Self-Hosted
-  - Identity
-  - Organizations
-  - RBAC
+- Authentication
+- User Management
+- Open Source
+- Self-Hosted
+- Identity
+- Organizations
+- RBAC
 created: '2026-05-23'
-modified: '2026-05-23'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: stack-auth:rest-api
   name: Stack Auth REST API
-  description: >-
-    REST API for managing users, sessions, OAuth providers, teams, organizations, permissions, and webhooks.
-    Used by Stack Auth's own SDKs and available for custom backend integrations. JWT-based authentication
-    with server / publishable / secret API keys per project.
+  description: REST API for managing users, sessions, OAuth providers, teams, organizations, permissions,
+    and webhooks. Used by Stack Auth's own SDKs and available for custom backend integrations. JWT-based
+    authentication with server / publishable / secret API keys per project.
   humanURL: https://docs.stack-auth.com/rest-api/overview
   baseURL: https://api.stack-auth.com
   tags:
@@ -83,9 +82,8 @@ apis:
     url: https://docs.stack-auth.com/rest-api/overview
 - aid: stack-auth:webhooks
   name: Stack Auth Webhooks
-  description: >-
-    Outbound webhook events for user lifecycle, team / organization membership, and permission changes.
-    Customers register endpoint URLs and verify delivery via signed payloads.
+  description: Outbound webhook events for user lifecycle, team / organization membership, and permission
+    changes. Customers register endpoint URLs and verify delivery via signed payloads.
   humanURL: https://docs.stack-auth.com/concepts/webhooks
   baseURL: customer-configured
   tags:
@@ -99,10 +97,9 @@ apis:
     url: https://docs.stack-auth.com/concepts/webhooks
 - aid: stack-auth:sdk-react
   name: Stack Auth React / Next.js SDK
-  description: >-
-    Frontend SDK distributed as @stackframe/stack on npm. Provides React components, hooks, and Next.js
-    App Router middleware for sign-in, sign-up, account settings, and team / organization management.
-    Headless mode supported for custom UI.
+  description: Frontend SDK distributed as @stackframe/stack on npm. Provides React components, hooks,
+    and Next.js App Router middleware for sign-in, sign-up, account settings, and team / organization
+    management. Headless mode supported for custom UI.
   humanURL: https://docs.stack-auth.com/sdk/overview
   baseURL: https://github.com/stack-auth/stack
   tags:
@@ -117,8 +114,7 @@ apis:
     url: https://github.com/stack-auth/stack
 - aid: stack-auth:cli
   name: Stack Auth CLI
-  description: >-
-    Project bootstrap CLI distributed as @stackframe/init-stack on npm, invoked with `npx @stackframe/init-stack@latest`
+  description: Project bootstrap CLI distributed as @stackframe/init-stack on npm, invoked with `npx @stackframe/init-stack@latest`
     to wire Stack Auth into a new or existing project.
   humanURL: https://docs.stack-auth.com/getting-started/setup
   baseURL: https://github.com/stack-auth/stack
@@ -130,9 +126,8 @@ apis:
     url: https://docs.stack-auth.com/getting-started/setup
 - aid: stack-auth:self-hosted
   name: Stack Auth Self-Hosted (stack-auth/stack)
-  description: >-
-    Open-source monorepo containing the Stack Auth backend (Next.js + Postgres) and dashboard. Deployable
-    on customer infrastructure as an alternative to the hosted SaaS at app.stack-auth.com.
+  description: Open-source monorepo containing the Stack Auth backend (Next.js + Postgres) and dashboard.
+    Deployable on customer infrastructure as an alternative to the hosted SaaS at app.stack-auth.com.
   humanURL: https://github.com/stack-auth/stack
   baseURL: https://github.com/stack-auth/stack
   tags:
@@ -147,7 +142,7 @@ apis:
   - type: Repository
     url: https://github.com/stack-auth/stack
 - aid: stack-auth:stack-auth-auth-api
-  name: Stack Auth Auth API
+  name: Stack Auth API
   description: The Auth API from Stack Auth — 4 operation(s) for auth.
   humanURL: https://docs.stack-auth.com/rest-api/overview
   baseURL: https://api.stack-auth.com
@@ -199,7 +194,7 @@ apis:
   - type: OpenAPI
     url: openapi/stack-auth-sessions-api-openapi.yml
 - aid: stack-auth:stack-auth-stack-auth-rest-api-api
-  name: Stack Auth Stack Auth REST API API
+  name: Stack Auth Stack Auth REST API
   description: The Stack Auth REST API API from Stack Auth — 1 operation(s) for stack auth rest api.
   humanURL: https://docs.stack-auth.com/rest-api/overview
   baseURL: https://api.stack-auth.com
@@ -285,41 +280,41 @@ apis:
   - type: OpenAPI
     url: openapi/stack-auth-webhooks-api-openapi.yml
 common:
-  - type: IssueTracker
-    url: https://github.com/stack-auth/stack/issues
-  - type: Releases
-    url: https://github.com/stack-auth/stack/releases
-  - type: ContributionGuide
-    url: https://github.com/hexclave/hexclave/blob/dev/CONTRIBUTING.md
-  - type: AgentCard
-    url: a2a/stack-auth-a2a.yml
-    name: A2A Agent Card
-    description: Agent Card served at /.well-known/agent-card.json (flavored against A2A 1.0.0).
-  - type: AgenticAccess
-    url: agentic-access/stack-auth-agentic-access.yml
-  - type: DomainSecurity
-    url: security/stack-auth-domain-security.yml
-  - type: Authentication
-    url: authentication/stack-auth-authentication.yml
-  - type: Website
-    url: https://stack-auth.com/
-  - type: Documentation
-    url: https://docs.stack-auth.com/
-  - type: GitHub
-    url: https://github.com/stack-auth
-  - type: Dashboard
-    url: https://app.stack-auth.com/
-  - type: Pricing
-    url: https://stack-auth.com/pricing
-  - type: Blog
-    url: https://stack-auth.com/blog
-  - type: LlmsText
-    url: https://docs.stack-auth.com/llms.txt
+- type: IssueTracker
+  url: https://github.com/stack-auth/stack/issues
+- type: Releases
+  url: https://github.com/stack-auth/stack/releases
+- type: ContributionGuide
+  url: https://github.com/hexclave/hexclave/blob/dev/CONTRIBUTING.md
+- type: AgentCard
+  url: a2a/stack-auth-a2a.yml
+  name: A2A Agent Card
+  description: Agent Card served at /.well-known/agent-card.json (flavored against A2A 1.0.0).
+- type: AgenticAccess
+  url: agentic-access/stack-auth-agentic-access.yml
+- type: DomainSecurity
+  url: security/stack-auth-domain-security.yml
+- type: Authentication
+  url: authentication/stack-auth-authentication.yml
+- type: Website
+  url: https://stack-auth.com/
+- type: Documentation
+  url: https://docs.stack-auth.com/
+- type: GitHub
+  url: https://github.com/stack-auth
+- type: Dashboard
+  url: https://app.stack-auth.com/
+- type: Pricing
+  url: https://stack-auth.com/pricing
+- type: Blog
+  url: https://stack-auth.com/blog
+- type: LlmsText
+  url: https://docs.stack-auth.com/llms.txt
 integrations:
-  - name: Next.js
-  - name: React
-  - name: shadcn/ui
-  - name: PostgreSQL
+- name: Next.js
+- name: React
+- name: shadcn/ui
+- name: PostgreSQL
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
