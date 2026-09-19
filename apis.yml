@@ -179,6 +179,8 @@ apis:
   humanURL: https://docs.stack-auth.com/rest-api/overview
   baseURL: https://api.stack-auth.com
   tags:
+  - Email
+  tags_raw:
   - Emails
   properties:
   - type: OpenAPI
