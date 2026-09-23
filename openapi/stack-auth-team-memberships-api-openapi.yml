@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Stack REST Auth Team Memberships API
+  title: Stack Auth REST Team Memberships API
   version: 1.0.0
   description: 'Stack Auth is an open-source authentication and user management platform.
 
@@ -8,9 +8,7 @@ info:
 
     https://api.stack-auth.com/api/v1, derived from the public OpenAPI document
 
-    referenced from https://docs.stack-auth.com/rest-api/overview.
-
-    '
+    referenced from https://docs.stack-auth.com/rest-api/overview.'
   contact:
     name: Stack Auth
     url: https://stack-auth.com
@@ -44,6 +42,8 @@ paths:
           description: Membership created
       tags:
       - Team Memberships
+      operationId: postTeamMembershipsByTeamIdByUserId
+      x-operation-id-source: derived
     delete:
       summary: Remove a user from a team
       responses:
@@ -51,6 +51,8 @@ paths:
           description: Membership removed
       tags:
       - Team Memberships
+      operationId: deleteTeamMembershipsByTeamIdByUserId
+      x-operation-id-source: derived
 components:
   securitySchemes:
     StackProjectId:

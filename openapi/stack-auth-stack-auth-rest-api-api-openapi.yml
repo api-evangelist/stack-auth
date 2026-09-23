@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Stack REST Auth Stack Auth REST API API
+  title: Stack Auth REST API
   version: 1.0.0
   description: 'Stack Auth is an open-source authentication and user management platform.
 
@@ -8,9 +8,7 @@ info:
 
     https://api.stack-auth.com/api/v1, derived from the public OpenAPI document
 
-    referenced from https://docs.stack-auth.com/rest-api/overview.
-
-    '
+    referenced from https://docs.stack-auth.com/rest-api/overview.'
   contact:
     name: Stack Auth
     url: https://stack-auth.com
@@ -34,6 +32,8 @@ paths:
           description: Successful response
       tags:
       - Stack Auth REST API
+      operationId: getRoot
+      x-operation-id-source: derived
 components:
   securitySchemes:
     StackProjectId:

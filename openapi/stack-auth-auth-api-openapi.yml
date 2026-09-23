@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Stack REST Auth API
   version: 1.0.0
@@ -8,9 +8,7 @@ info:
 
     https://api.stack-auth.com/api/v1, derived from the public OpenAPI document
 
-    referenced from https://docs.stack-auth.com/rest-api/overview.
-
-    '
+    referenced from https://docs.stack-auth.com/rest-api/overview.'
   contact:
     name: Stack Auth
     url: https://stack-auth.com
@@ -33,6 +31,8 @@ paths:
           description: Anonymous session created
       tags:
       - Auth
+      operationId: postAuthAnonymousSignUp
+      x-operation-id-source: derived
   /auth/cli:
     post:
       summary: Start CLI authentication flow
@@ -41,6 +41,8 @@ paths:
           description: CLI auth flow started
       tags:
       - Auth
+      operationId: postAuthCli
+      x-operation-id-source: derived
   /auth/cli/complete:
     post:
       summary: Complete CLI authentication flow
@@ -49,6 +51,8 @@ paths:
           description: CLI auth completed
       tags:
       - Auth
+      operationId: postAuthCliComplete
+      x-operation-id-source: derived
   /auth/cli/poll:
     post:
       summary: Poll CLI authentication flow status
@@ -57,6 +61,8 @@ paths:
           description: Poll result
       tags:
       - Auth
+      operationId: postAuthCliPoll
+      x-operation-id-source: derived
 components:
   securitySchemes:
     StackProjectId:

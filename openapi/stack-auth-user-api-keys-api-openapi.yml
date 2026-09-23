@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Stack REST Auth User Api Keys API
+  title: Stack Auth REST User Api Keys API
   version: 1.0.0
   description: 'Stack Auth is an open-source authentication and user management platform.
 
@@ -8,9 +8,7 @@ info:
 
     https://api.stack-auth.com/api/v1, derived from the public OpenAPI document
 
-    referenced from https://docs.stack-auth.com/rest-api/overview.
-
-    '
+    referenced from https://docs.stack-auth.com/rest-api/overview.'
   contact:
     name: Stack Auth
     url: https://stack-auth.com
@@ -33,6 +31,8 @@ paths:
           description: List of user API keys
       tags:
       - User Api Keys
+      operationId: getUserApiKeys
+      x-operation-id-source: derived
     post:
       summary: Create a user API key
       requestBody:
@@ -46,6 +46,8 @@ paths:
           description: API key created
       tags:
       - User Api Keys
+      operationId: postUserApiKeys
+      x-operation-id-source: derived
   /user-api-keys/{api_key_id}:
     parameters:
     - in: path
@@ -60,6 +62,8 @@ paths:
           description: User API key
       tags:
       - User Api Keys
+      operationId: getUserApiKeysByApiKeyId
+      x-operation-id-source: derived
     patch:
       summary: Update a user API key
       requestBody:
@@ -73,6 +77,8 @@ paths:
           description: Updated API key
       tags:
       - User Api Keys
+      operationId: patchUserApiKeysByApiKeyId
+      x-operation-id-source: derived
   /user-api-keys/check:
     post:
       summary: Check whether a user API key is valid
@@ -87,6 +93,8 @@ paths:
           description: Validation result
       tags:
       - User Api Keys
+      operationId: postUserApiKeysCheck
+      x-operation-id-source: derived
 components:
   securitySchemes:
     StackProjectId:

@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Stack REST Auth Webhooks API
+  title: Stack Auth REST Webhooks API
   version: 1.0.0
   description: 'Stack Auth is an open-source authentication and user management platform.
 
@@ -8,9 +8,7 @@ info:
 
     https://api.stack-auth.com/api/v1, derived from the public OpenAPI document
 
-    referenced from https://docs.stack-auth.com/rest-api/overview.
-
-    '
+    referenced from https://docs.stack-auth.com/rest-api/overview.'
   contact:
     name: Stack Auth
     url: https://stack-auth.com
@@ -33,6 +31,8 @@ paths:
           description: List of webhooks
       tags:
       - Webhooks
+      operationId: getWebhooks
+      x-operation-id-source: derived
     post:
       summary: Create a webhook
       requestBody:
@@ -46,6 +46,8 @@ paths:
           description: Webhook created
       tags:
       - Webhooks
+      operationId: postWebhooks
+      x-operation-id-source: derived
 components:
   securitySchemes:
     StackProjectId:
