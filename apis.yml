@@ -9,17 +9,20 @@ description: Stack Auth is an open-source authentication and user management pla
   as a hosted SaaS at app.stack-auth.com and as a self-hosted deployment from the stack-auth/stack monorepo
   on GitHub. Authentication is JWT-based. Y Combinator-backed.
 deliveryModel:
-  model: unknown
+  model: saas
+  license_evidence:
+    not_product:
+    - stack-auth/stack
   open_source: unknown
   commercial: true
   callable_host: true
-  label: Delivery model not determined — needs a product licence on record
+  label: Hosted service · you call their endpoint
   confidence: low
   source:
   - openapi
   - pricing
-  - repository-unlicensed
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: free
@@ -43,11 +46,12 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.j
 tags:
 - Authentication
 - User Management
-- Open-Source
+- Open Source
 - Self-Hosted
 - Identity
 - Organization
 - RBAC
+- A2A
 tags_raw:
 - Authentication
 - User Management
@@ -56,6 +60,8 @@ tags_raw:
 - Identity
 - Organizations
 - RBAC
+- Open-Source
+- A2A
 created: '2026-05-23'
 modified: '2026-09-16'
 specificationVersion: '0.23'
@@ -131,13 +137,14 @@ apis:
   humanURL: https://github.com/stack-auth/stack
   baseURL: https://github.com/stack-auth/stack
   tags:
-  - Open-Source
+  - Open Source
   - Self-Hosted
   - Repository
   tags_raw:
   - Open Source
   - Self-Hosted
   - Repository
+  - Open-Source
   properties:
   - type: Repository
     url: https://github.com/stack-auth/stack
