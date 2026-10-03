@@ -16,8 +16,14 @@ deployment:
 tools_count: 2
 tools:
 - name: ask_hexclave
-  description: ''
+  description: 'Ask the Hexclave documentation assistant. Use this for any question about Hexclave: setup,
+    APIs, SDK usage, configuration, or troubleshooting. If you haven''t already, load the `skill` resource
+    first — it provides the baseline Hexclave conte'
 - name: give_feedback
-  description: ''
+  description: 'Report a concrete problem or observation about Hexclave back to the Hexclave team. Call
+    this when you hit something specific and actionable: documentation that was wrong, missing, or out
+    of date; an API or SDK that behaved differently than'
 tools_source: live tools/list via initialize handshake, 2026-09-12 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
+descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
+  --descriptions, 2026-09-28
