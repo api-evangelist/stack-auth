@@ -1,0 +1,99 @@
+slug: stack-auth
+provider: Stack Auth
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 8
+edges:
+- tag: Auth
+  spec_file: stack-auth-auth-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: POST /auth/anonymous/sign-up "Anonymous sign-up"; POST /auth/cli "Start CLI authentication
+    flow"
+  reason: Operations perform user sign-up and authentication flows for an authentication and user management
+    platform — squarely Identity & Access Management.
+- tag: Sessions
+  spec_file: stack-auth-sessions-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: DELETE /sessions/current "Sign out (delete current session)"; POST /sessions/current/refresh
+    "Refresh the current session's access token"
+  reason: Session creation, sign-out and access-token refresh are core authentication/session management
+    operations, i.e. Identity & Access Management.
+- tag: Connected Accounts
+  spec_file: stack-auth-connected-accounts-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: GET /connected-accounts/{user_id} "List a user's connected (OAuth) accounts"
+  reason: Lists a user's federated OAuth identity links, i.e. identity federation/linking within an auth
+    platform. IAM is the correct reading; 'accounts' here is an OAuth identity, not a customer or financial
+    account.
+- tag: Users
+  spec_file: stack-auth-users-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: GET /users  List users; POST /users  Create a user; DELETE /users/{user_id}  Delete a user
+    — on an "open-source authentication and user management platform"
+  reason: User account create/read/update/delete on an authentication platform is identity lifecycle administration
+    (joiners-movers-leavers), not customer master data management.
+- tag: Team Permissions
+  spec_file: stack-auth-team-permissions-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.78
+  evidence: GET /team-permissions  getTeamPermissions  List team permissions; vendor bundles "organizations,
+    teams, role-based access control"
+  reason: Operation lists permissions granted within teams on an authentication/user-management platform
+    — role-based access control, i.e. Identity & Access Management. No other reading of 'team permissions'
+    fits an auth provider's surface.
+- tag: Team Memberships
+  spec_file: stack-auth-team-memberships-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.75
+  evidence: POST /team-memberships/{team_id}/{user_id} "Add a user to a team"; DELETE ... "Remove a user
+    from a team"
+  reason: Managing user membership of teams within an auth platform that bundles "organizations, teams,
+    role-based access control" is group-based access administration — Identity & Access Management, not
+    HR org management.
+- tag: Contact Channels
+  spec_file: stack-auth-contact-channels-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: POST /contact-channels/verify "Send a contact channel verification request"; POST /contact-channels/verify/check-code
+    "Check a contact channel verification code"
+  reason: Contact channels are the email/phone identifiers attached to a user account, with verification
+    codes used for sign-in and account assurance — identity credential/attribute management rather than
+    CRM contact data. Moderate confidence because the surface also resembles generic profile data management.
+- tag: Team Api Keys
+  spec_file: stack-auth-team-api-keys-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: POST /team-api-keys "Create a team API key"; POST /team-api-keys/check "Check whether a team
+    API key is valid"
+  reason: Issuance, update and validation of API keys scoped to teams is credential lifecycle management
+    for programmatic access, which falls under Identity & Access Management. Moderate confidence as it
+    could alternatively be framed as developer credential management on a developer platform.

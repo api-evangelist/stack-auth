@@ -289,6 +289,9 @@ apis:
   - type: OpenAPI
     url: openapi/stack-auth-webhooks-api-openapi.yml
 common:
+- type: CapabilityMap
+  url: capabilities/stack-auth-capability-edges.yml
+  name: Stack Auth Business Capability Map
 - type: IssueTracker
   url: https://github.com/stack-auth/stack/issues
 - type: Releases
